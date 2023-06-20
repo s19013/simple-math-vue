@@ -6,20 +6,17 @@
 </template>
 
 <!-- ここにpropsで値渡して計算でもよくない? -->
-<script>
-export default {
-  data() {
-    return {
-        
-    }
+<script setup>
+import { defineProps } from "vue";
+
+// propsはあまり変わらない
+const props = defineProps({
+  value: {
+    type: Number,
+    default: 0,
   },
-  props:{
-    value:{
-        type:Number,
-        default:0
-    }
-  },
-}
+});
+
 </script>
 
 <style scoped>
