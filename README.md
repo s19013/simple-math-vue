@@ -9,3 +9,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 # 
 実はinputで変化した時に答えをださせるのがうまく行かなかった
 与えるprops間違えていただけだった# simple-math-vue
+compotion Apiはなにかするたびにimportしないと行けないのがめんどい
+emitがエラー出てないのに反映されてない
+確かにcomposition apiのほうがコード自体はスッキリする｡
+ただ､色々追加したりするので難易度は高い
+なんか帰って難しくなってない?複雑にごちゃついてない?
+特にむりしてcomposition apiで書く必要はないのでは?
+なんかいちいち`.value`とかして直感的じゃない
