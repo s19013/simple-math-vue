@@ -6,34 +6,27 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import ValueInput from './components/ValueInput.vue';
 import ValueAnswer from './components/ValueAnswer.vue';
-export default {
-  data() {
-    return {
-      value1:0,
-      value2:0,
-      answer:0,
-    }
-  },
-  components:{
-    ValueInput,
-    ValueAnswer,
-    ValueInput
-  },
-  methods: {
-    changeValue1({newValue}){
-      let ans = parseInt(newValue) + parseInt(this.value2)
-      this.value1 = newValue
-      this.answer = ans
-    },
-    changeValue2({newValue}){
-      let ans = parseInt(this.value1) + parseInt(newValue)
-      this.value2 = newValue
-      this.answer = ans
-    }
-  },
+import { ref } from "vue";
+
+const value1 = ref(0);
+const value2 = ref(0);
+const answer = ref(0);
+
+
+// いちいち.valueって書くのめんどくさい
+const changeValue1 = ({newValue}) => {
+  let ans = parseInt(newValue) + parseInt(value2.value)
+  value1.value = newValue
+  answer.value = ans
+}
+
+const changeValue2 = ({newValue}) => {
+  let ans = parseInt(value1.value) + parseInt(newValue)
+  value2.value = newValue
+  answer.value = ans
 }
 </script>
 
